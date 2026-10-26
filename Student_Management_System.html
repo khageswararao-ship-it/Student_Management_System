@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>🎓 StudentMS</h2>
+        <button onclick="showSection('dashboard')">Dashboard</button>
+        <button onclick="showSection('addStudent')">Add Student</button>
+        <button onclick="showSection('students')">Students</button>
+    </div>
+
+    <div class="main">
+        <div class="topbar">
+            <h1>Student Management System</h1>
+            <input
+                type="text"
+                id="searchBox"
+                class="search"
+                placeholder="Search Student..."
+                onkeyup="searchStudent()"
+            >
+        </div>
+
+        <div id="dashboard">
+            <div class="cards">
+                <div class="card">
+                    Total Students
+                    <h3 id="totalStudents">0</h3>
+                </div>
+                <div class="card">
+                    Attendance
+                    <h3>95%</h3>
+                </div>
+                <div class="card">
+                    Courses
+                    <h3>12</h3>
+                </div>
+                <div class="card">
+                    Teachers
+                    <h3>8</h3>
+                </div>
+            </div>
+        </div>
+
+        <div id="addStudent" class="section hidden">
+            <h2>Add Student</h2>
+            <input type="text" id="name" placeholder="Student Name">
+            <input type="text" id="roll" placeholder="Roll Number">
+            <input type="text" id="course" placeholder="Course">
+            <input type="number" id="marks" placeholder="Marks">
+            <input
+                type="button"
+                value="Save Student"
+                class="submit"
+                onclick="addStudent()"
+            >
+        </div>
+
+        <div id="students" class="section hidden">
+            <h2>Student Records</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll</th>
+                        <th>Course</th>
+                        <th>Marks</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTable"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
